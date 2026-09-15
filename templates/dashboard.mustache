@@ -1,0 +1,123 @@
+{{!
+    This file is part of Moodle - https://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template mod_trafficlight/dashboard
+
+    Example context (json):
+    {
+        Aqui tem que criar o context em inglês
+    }
+}}
+<div class="trafficlight-dashboard" role="region" aria-labelledby="trafficlight-dashboard-title">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+        <h3 id="trafficlight-dashboard-title" class="h4 mb-0">{{#str}} classdashboard, mod_trafficlight {{/str}}</h3>
+        <span class="trafficlight-response-total">{{responded}} / {{total}} · {{responsepercentage}}%</span>
+    </div>
+
+    <div class="trafficlight-summary-grid">
+        {{#green}}
+            <div class="trafficlight-summary trafficlight-summary-green">
+                <span class="trafficlight-lamp" aria-hidden="true"></span>
+                <div>
+                    <strong>{{label}}</strong>
+                    <span>{{description}}</span>
+                </div>
+                <div class="trafficlight-summary-value">{{count}} <small>{{percentage}}%</small></div>
+            </div>
+        {{/green}}
+        {{#yellow}}
+            <div class="trafficlight-summary trafficlight-summary-yellow">
+                <span class="trafficlight-lamp" aria-hidden="true"></span>
+                <div>
+                    <strong>{{label}}</strong>
+                    <span>{{description}}</span>
+                </div>
+                <div class="trafficlight-summary-value">{{count}} <small>{{percentage}}%</small></div>
+            </div>
+        {{/yellow}}
+        {{#red}}
+            <div class="trafficlight-summary trafficlight-summary-red">
+                <span class="trafficlight-lamp" aria-hidden="true"></span>
+                <div>
+                    <strong>{{label}}</strong>
+                    <span>{{description}}</span>
+                </div>
+                <div class="trafficlight-summary-value">{{count}} <small>{{percentage}}%</small></div>
+            </div>
+        {{/red}}
+        {{#unanswered}}
+            <div class="trafficlight-summary trafficlight-summary-unanswered">
+                <span class="trafficlight-lamp" aria-hidden="true"></span>
+                <div>
+                    <strong>{{label}}</strong>
+                    <span>{{description}}</span>
+                </div>
+                <div class="trafficlight-summary-value">{{count}} <small>{{percentage}}%</small></div>
+            </div>
+        {{/unanswered}}
+    </div>
+
+    <div class="trafficlight-user-grid mt-4">
+        {{#green}}
+            <section class="trafficlight-user-panel trafficlight-user-panel-green">
+                <h4><span class="trafficlight-lamp" aria-hidden="true"></span>{{label}} <small>({{count}})</small></h4>
+                {{#hasusers}}
+                    <ul>
+                        {{#users}}<li><a href="{{profileurl}}">{{name}}</a></li>{{/users}}
+                    </ul>
+                {{/hasusers}}
+                {{^hasusers}}<p class="text-muted">{{#str}} nousersinstatus, mod_trafficlight {{/str}}</p>{{/hasusers}}
+            </section>
+        {{/green}}
+
+        {{#yellow}}
+            <section class="trafficlight-user-panel trafficlight-user-panel-yellow">
+                <h4><span class="trafficlight-lamp" aria-hidden="true"></span>{{label}} <small>({{count}})</small></h4>
+                {{#hasusers}}
+                    <ul>
+                        {{#users}}<li><a href="{{profileurl}}">{{name}}</a></li>{{/users}}
+                    </ul>
+                {{/hasusers}}
+                {{^hasusers}}<p class="text-muted">{{#str}} nousersinstatus, mod_trafficlight {{/str}}</p>{{/hasusers}}
+            </section>
+        {{/yellow}}
+
+        {{#red}}
+            <section class="trafficlight-user-panel trafficlight-user-panel-red">
+                <h4><span class="trafficlight-lamp" aria-hidden="true"></span>{{label}} <small>({{count}})</small></h4>
+                {{#hasusers}}
+                    <ul>
+                        {{#users}}<li><a href="{{profileurl}}">{{name}}</a></li>{{/users}}
+                    </ul>
+                {{/hasusers}}
+                {{^hasusers}}<p class="text-muted">{{#str}} nousersinstatus, mod_trafficlight {{/str}}</p>{{/hasusers}}
+            </section>
+        {{/red}}
+
+        {{#unanswered}}
+            <section class="trafficlight-user-panel trafficlight-user-panel-unanswered">
+                <h4><span class="trafficlight-lamp" aria-hidden="true"></span>{{label}} <small>({{count}})</small></h4>
+                {{#hasusers}}
+                    <ul>
+                        {{#users}}<li><a href="{{profileurl}}">{{name}}</a></li>{{/users}}
+                    </ul>
+                {{/hasusers}}
+                {{^hasusers}}<p class="text-muted">{{#str}} nousersinstatus, mod_trafficlight {{/str}}</p>{{/hasusers}}
+            </section>
+        {{/unanswered}}
+    </div>
+</div>

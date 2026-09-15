@@ -1,0 +1,171 @@
+.mod-trafficlight-view .trafficlight-student,
+.mod-trafficlight-view .trafficlight-dashboard {
+    max-width: 1100px;
+    margin: 1.5rem auto;
+}
+
+.mod-trafficlight-view .trafficlight-choices {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.mod-trafficlight-view .trafficlight-choice {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 1.2rem;
+    border: 2px solid #d8dee6;
+    border-radius: 1rem;
+    background: #fff;
+    color: #1f2937;
+    text-align: left;
+    transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+
+.mod-trafficlight-view .trafficlight-choice:hover,
+.mod-trafficlight-view .trafficlight-choice:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 .5rem 1.2rem rgba(0, 0, 0, .08);
+}
+
+.mod-trafficlight-view .trafficlight-choice.is-selected {
+    border-color: #212529;
+    box-shadow: 0 0 0 .2rem rgba(33, 37, 41, .12);
+}
+
+.mod-trafficlight-view .trafficlight-lamp {
+    display: inline-block;
+    flex: 0 0 auto;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, .2);
+    background: #adb5bd;
+}
+
+.mod-trafficlight-view .trafficlight-choice .trafficlight-lamp {
+    width: 3rem;
+    height: 3rem;
+}
+
+.mod-trafficlight-view .trafficlight-choice-green .trafficlight-lamp,
+.mod-trafficlight-view .trafficlight-summary-green .trafficlight-lamp,
+.mod-trafficlight-view .trafficlight-user-panel-green .trafficlight-lamp {
+    background: #198754;
+}
+
+.mod-trafficlight-view .trafficlight-choice-yellow .trafficlight-lamp,
+.mod-trafficlight-view .trafficlight-summary-yellow .trafficlight-lamp,
+.mod-trafficlight-view .trafficlight-user-panel-yellow .trafficlight-lamp {
+    background: #ffc107;
+}
+
+.mod-trafficlight-view .trafficlight-choice-red .trafficlight-lamp,
+.mod-trafficlight-view .trafficlight-summary-red .trafficlight-lamp,
+.mod-trafficlight-view .trafficlight-user-panel-red .trafficlight-lamp {
+    background: #dc3545;
+}
+
+.mod-trafficlight-view .trafficlight-choice-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.mod-trafficlight-view .trafficlight-choice-text strong {
+    font-size: 1.2rem;
+}
+
+.mod-trafficlight-view .trafficlight-choice-text span {
+    color: #5b6470;
+}
+
+.mod-trafficlight-view .trafficlight-response-total {
+    padding: .4rem .75rem;
+    border-radius: 999px;
+    background: #f1f3f5;
+    font-weight: 600;
+}
+
+.mod-trafficlight-view .trafficlight-summary-grid,
+.mod-trafficlight-view .trafficlight-user-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.mod-trafficlight-view .trafficlight-summary {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: .75rem;
+    padding: 1rem;
+    border: 1px solid #e4e7eb;
+    border-radius: .9rem;
+    background: #fff;
+}
+
+.mod-trafficlight-view .trafficlight-summary strong,
+.mod-trafficlight-view .trafficlight-summary span {
+    display: block;
+}
+
+.mod-trafficlight-view .trafficlight-summary span {
+    color: #68727d;
+    font-size: .88rem;
+}
+
+.mod-trafficlight-view .trafficlight-summary-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.mod-trafficlight-view .trafficlight-summary-value small {
+    color: #68727d;
+    font-size: .78rem;
+}
+
+.mod-trafficlight-view .trafficlight-user-panel {
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid #e4e7eb;
+    border-radius: .9rem;
+    background: #fff;
+}
+
+.mod-trafficlight-view .trafficlight-user-panel h4 {
+    display: flex;
+    align-items: center;
+    gap: .55rem;
+    font-size: 1rem;
+}
+
+.mod-trafficlight-view .trafficlight-user-panel h4 small {
+    color: #68727d;
+}
+
+.mod-trafficlight-view .trafficlight-user-panel ul {
+    margin: .9rem 0 0;
+    padding-left: 1.2rem;
+}
+
+.mod-trafficlight-view .trafficlight-user-panel li + li {
+    margin-top: .35rem;
+}
+
+@media (max-width: 991.98px) {
+    .mod-trafficlight-view .trafficlight-summary-grid,
+    .mod-trafficlight-view .trafficlight-user-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 767.98px) {
+    .mod-trafficlight-view .trafficlight-choices,
+    .mod-trafficlight-view .trafficlight-summary-grid,
+    .mod-trafficlight-view .trafficlight-user-grid {
+        grid-template-columns: 1fr;
+    }
+}

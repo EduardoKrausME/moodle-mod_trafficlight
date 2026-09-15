@@ -1,0 +1,66 @@
+{{!
+    This file is part of Moodle - https://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template mod_trafficlight/student_form
+
+    Example context (json):
+    {
+        Aqui tem que criar o context em inglês
+    }
+}}
+<div class="trafficlight-student" role="region" aria-labelledby="trafficlight-title">
+    <h3 id="trafficlight-title" class="h4 mb-3">{{#str}} chooseyourstatus, mod_trafficlight {{/str}}</h3>
+
+    <form method="post" action="{{action}}" class="trafficlight-choice-form">
+        <input type="hidden" name="sesskey" value="{{sesskey}}">
+        <input type="hidden" name="submitresponse" value="1">
+
+        <div class="trafficlight-choices">
+            <button type="submit" name="status" value="green"
+                    class="trafficlight-choice trafficlight-choice-green {{#green}}is-selected{{/green}}"
+                    aria-pressed="{{#green}}true{{/green}}{{^green}}false{{/green}}">
+                <span class="trafficlight-lamp" aria-hidden="true"></span>
+                <span class="trafficlight-choice-text">
+                    <strong>{{#str}} statusgreen, mod_trafficlight {{/str}}</strong>
+                    <span>{{#str}} statusgreendescription, mod_trafficlight {{/str}}</span>
+                </span>
+            </button>
+
+            <button type="submit" name="status" value="yellow"
+                    class="trafficlight-choice trafficlight-choice-yellow {{#yellow}}is-selected{{/yellow}}"
+                    aria-pressed="{{#yellow}}true{{/yellow}}{{^yellow}}false{{/yellow}}">
+                <span class="trafficlight-lamp" aria-hidden="true"></span>
+                <span class="trafficlight-choice-text">
+                    <strong>{{#str}} statusyellow, mod_trafficlight {{/str}}</strong>
+                    <span>{{#str}} statusyellowdescription, mod_trafficlight {{/str}}</span>
+                </span>
+            </button>
+
+            <button type="submit" name="status" value="red"
+                    class="trafficlight-choice trafficlight-choice-red {{#red}}is-selected{{/red}}"
+                    aria-pressed="{{#red}}true{{/red}}{{^red}}false{{/red}}">
+                <span class="trafficlight-lamp" aria-hidden="true"></span>
+                <span class="trafficlight-choice-text">
+                    <strong>{{#str}} statusred, mod_trafficlight {{/str}}</strong>
+                    <span>{{#str}} statusreddescription, mod_trafficlight {{/str}}</span>
+                </span>
+            </button>
+        </div>
+    </form>
+
+    <p class="text-muted mt-3 mb-0">{{#str}} changeanytime, mod_trafficlight {{/str}}</p>
+</div>
