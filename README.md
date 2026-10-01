@@ -1,23 +1,21 @@
 # mod_trafficlight
 
-A minimal Moodle activity for quick classroom self-reporting.
+Traffic Light é uma atividade rápida de autoavaliação para o estudante informar ao professor como está acompanhando a
+aula ou um conteúdo.
 
-Students choose one of three fixed states:
+## Como funciona
 
-- Green: I understand / I am doing well
-- Yellow: I have doubts / I need to review
-- Red: I need help / I do not understand
+O estudante escolhe um dos três estados:
 
-Teachers see a visual dashboard with totals, percentages, students by status, and students who have not responded yet.
+- **Green**: entendi / estou acompanhando bem;
+- **Yellow**: tenho dúvidas / preciso revisar;
+- **Red**: preciso de ajuda / não entendi.
 
-## Data model
+Cada estudante mantém uma resposta atual por atividade. Se mudar de estado, a resposta anterior é substituída em vez de
+criar um histórico, deixando o painel focado na situação atual da turma.
 
-`trafficlight` stores the activity instance.
+## Visão do professor
 
-`trafficlight_responses` stores one current response per user and activity. The unique index
-on `(trafficlightid, userid)` ensures that changing a status updates the existing response instead of creating response
-history.
-
-## Compatibility
-
-Requires Moodle 4.1 or later.
+O professor vê um dashboard com totais, percentuais, estudantes por estado e quem ainda não respondeu. Isso permite usar
+a atividade durante a aula como um sinal rápido para decidir se deve avançar, revisar um ponto ou atender um grupo com
+mais dificuldade.
