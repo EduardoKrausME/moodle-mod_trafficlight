@@ -21,6 +21,7 @@
  * @copyright  2026 Eduardo Kraus
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 namespace mod_trafficlight\privacy;
 
 use context;
@@ -29,6 +30,7 @@ use core_privacy\local\metadata\collection;
 use core_privacy\local\request\approved_contextlist;
 use core_privacy\local\request\approved_userlist;
 use core_privacy\local\request\contextlist;
+use core_privacy\local\request\core_userlist_provider;
 use core_privacy\local\request\transform;
 use core_privacy\local\request\userlist;
 use core_privacy\local\request\writer;
@@ -39,7 +41,7 @@ use core_privacy\local\request\writer;
 class provider implements
     \core_privacy\local\metadata\provider,
     \core_privacy\local\request\plugin\provider,
-    \core_privacy\local\request\core_userlist_provider {
+    core_userlist_provider {
 
     /**
      * Describes stored personal data.
@@ -140,7 +142,7 @@ class provider implements
                 continue;
             }
 
-            $data = (object) [
+            $data = (object)[
                 get_string("privacy:export:status", "mod_trafficlight") =>
                     get_string("status" . $response->status, "mod_trafficlight"),
                 get_string("privacy:export:timecreated", "mod_trafficlight") => transform::datetime($response->timecreated),

@@ -21,6 +21,7 @@
  * @copyright  2026 Eduardo Kraus
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 namespace mod_trafficlight;
 
 use context_module;
@@ -94,7 +95,7 @@ class response_manager {
             $record->timemodified = $now;
             $DB->update_record("trafficlight_responses", $record);
         } else {
-            $record = (object) [
+            $record = (object)[
                 "trafficlightid" => $this->trafficlight->id,
                 "userid" => $userid,
                 "status" => $status,

@@ -14,7 +14,9 @@ Teachers see a visual dashboard with totals, percentages, students by status, an
 
 `trafficlight` stores the activity instance.
 
-`trafficlight_responses` stores one current response per user and activity. The unique index on `(trafficlightid, userid)` ensures that changing a status updates the existing response instead of creating response history.
+`trafficlight_responses` stores one current response per user and activity. The unique index
+on `(trafficlightid, userid)` ensures that changing a status updates the existing response instead of creating response
+history.
 
 ## Compatibility
 

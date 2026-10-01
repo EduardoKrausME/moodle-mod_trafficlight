@@ -24,6 +24,7 @@
 
 require_once(__DIR__ . "/../../config.php");
 
+use core\output\notification;
 use mod_trafficlight\dashboard;
 use mod_trafficlight\response_manager;
 
@@ -57,7 +58,7 @@ if (!$canviewreport) {
         require_sesskey();
         $status = required_param("status", PARAM_ALPHA);
         $manager->save_response($USER->id, $status);
-        redirect($PAGE->url, get_string("responsesaved", "mod_trafficlight"), null, \core\output\notification::NOTIFY_SUCCESS);
+        redirect($PAGE->url, get_string("responsesaved", "mod_trafficlight"), null, notification::NOTIFY_SUCCESS);
     }
 }
 

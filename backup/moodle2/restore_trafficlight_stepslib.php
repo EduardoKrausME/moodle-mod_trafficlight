@@ -21,6 +21,7 @@
  * @copyright  2026 Eduardo Kraus
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 /**
  * Restores the traffic light activity structure.
  */
@@ -50,7 +51,7 @@ class restore_trafficlight_activity_structure_step extends restore_activity_stru
     protected function process_trafficlight($data) {
         global $DB;
 
-        $data = (object) $data;
+        $data = (object)$data;
         $oldid = $data->id;
         $data->course = $this->get_courseid();
 
@@ -68,7 +69,7 @@ class restore_trafficlight_activity_structure_step extends restore_activity_stru
     protected function process_trafficlight_response($data) {
         global $DB;
 
-        $data = (object) $data;
+        $data = (object)$data;
         $data->trafficlightid = $this->get_new_parentid("trafficlight");
         $data->userid = $this->get_mappingid("user", $data->userid);
 

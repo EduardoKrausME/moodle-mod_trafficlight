@@ -21,6 +21,7 @@
  * @copyright  2026 Eduardo Kraus
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 namespace mod_trafficlight;
 
 use context_module;
@@ -132,6 +133,6 @@ class dashboard {
             return 0;
         }
 
-        return (int) round(($value / $total) * 100);
+        return (int)round(($value / $total) * 100);
     }
 }
