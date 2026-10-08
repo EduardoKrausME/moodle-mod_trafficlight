@@ -24,7 +24,6 @@
 
 namespace mod_trafficlight\event;
 
-defined('MOODLE_INTERNAL') || die();
 
 /**
  * Logged when a user views a traffic light activity.
