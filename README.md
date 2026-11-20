@@ -6,9 +6,9 @@ Traffic Light is a Moodle activity that lets students quickly tell their teacher
 
 Each student selects one of three states:
 
-- **Green** — I understand and am doing well.
-- **Yellow** — I have questions or need to review.
-- **Red** — I need help or do not understand.
+- **Green** - I understand and am doing well.
+- **Yellow** - I have questions or need to review.
+- **Red** - I need help or do not understand.
 
 Students can update their status at any time. Each student has only one current response per activity: choosing a different colour replaces the previous status rather than creating a history of responses.
 
